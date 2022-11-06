@@ -1,0 +1,34 @@
+{
+  "references": [
+    "https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-5144"
+  ],
+  "security_events": [
+    {
+      "event_version": [
+        "0"
+      ],
+      "event_id": "5144",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "A network share object was deleted.",
+      "audit_sub_category": "File Share",
+      "channel": "Security",
+      "platform": "windows",
+      "audit_category": "Object Access"
+    }
+  ],
+  "attack": {
+    "data_component": "network share deletion",
+    "data_source": "network share"
+  },
+  "name": "User deleted Network share",
+  "relationship_id": "REL-2022-0174",
+  "contributors": [
+    "Jose Rodriguez @Cyb3rPandaH",
+    "Roberto Rodriguez @Cyb3rWard0g"
+  ],
+  "behavior": {
+    "source": "user",
+    "relationship": "deleted",
+    "target": "network share"
+  }
+}

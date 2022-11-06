@@ -1,0 +1,59 @@
+{
+  "references": [
+    "https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#event-id-3-network-connection"
+  ],
+  "security_events": [
+    {
+      "event_version": [
+        "4.32"
+      ],
+      "event_id": "3",
+      "log_source": "Microsoft-Windows-Sysmon",
+      "name": "Network connection.",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "platform": "windows",
+      "audit_category": "NetworkConnect"
+    },
+    {
+      "event_version": [
+        "4.81"
+      ],
+      "event_id": "3",
+      "log_source": "sysmon",
+      "name": "Network connection.",
+      "platform": "linux",
+      "audit_category": "NetworkConnect"
+    },
+    {
+      "event_version": [
+        "0",
+        "1"
+      ],
+      "event_id": "DeviceNetworkEvents",
+      "log_source": "Microsoft Defender for Endpoint",
+      "name": "DeviceNetworkEvents",
+      "filter_in": [
+        {
+          "ActionType": "InboundConnectionAccepted"
+        }
+      ],
+      "platform": "windows"
+    }
+  ],
+  "attack": {
+    "data_component": "network connection creation",
+    "data_source": "network traffic"
+  },
+  "name": "User connected from Device",
+  "relationship_id": "REL-2022-0138",
+  "contributors": [
+    "Jose Rodriguez @Cyb3rPandaH",
+    "Roberto Rodriguez @Cyb3rWard0g",
+    "Olaf Hartong @olafhartong"
+  ],
+  "behavior": {
+    "source": "user",
+    "relationship": "connected from",
+    "target": "device"
+  }
+}

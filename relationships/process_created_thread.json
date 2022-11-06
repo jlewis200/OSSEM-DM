@@ -1,0 +1,48 @@
+{
+  "references": [
+    "https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#event-id-8-createremotethread"
+  ],
+  "security_events": [
+    {
+      "event_version": [
+        "4.32"
+      ],
+      "event_id": "8",
+      "log_source": "Microsoft-Windows-Sysmon",
+      "name": "CreateRemoteThread.",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "platform": "windows",
+      "audit_category": "CreateRemoteThread"
+    },
+    {
+      "event_version": [
+        "0",
+        "1"
+      ],
+      "event_id": "DeviceEvents",
+      "log_source": "Microsoft Defender for Endpoint",
+      "name": "DeviceEvents",
+      "filter_in": [
+        {
+          "ActionType": "CreateRemoteThreadApiCall"
+        }
+      ],
+      "platform": "windows"
+    }
+  ],
+  "attack": {
+    "data_component": "process creation",
+    "data_source": "process"
+  },
+  "name": "Process created Thread",
+  "relationship_id": "REL-2022-0153",
+  "contributors": [
+    "Reid Gilman @reidgilman",
+    "Olaf Hartong @olafhartong"
+  ],
+  "behavior": {
+    "source": "process",
+    "relationship": "created",
+    "target": "thread"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "notes": [
+    "This event indicates that a logon process has registered with the Local Security Authority (LSA).",
+    "At the technical level, the event does not come from the registration of a trusted logon process, but from a confirmation that the process is a trusted logon process. If it is a trusted logon process, the event generates."
+  ],
+  "references": [
+    "https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4611",
+    "https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=4611"
+  ],
+  "security_events": [
+    {
+      "event_version": [
+        "0"
+      ],
+      "event_id": "4611",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "A trusted logon process has been registered with the Local Security Authority.",
+      "audit_sub_category": "Security System Extension",
+      "channel": "Security",
+      "platform": "windows",
+      "audit_category": "System"
+    }
+  ],
+  "name": "Logon Process Trusted",
+  "relationship_id": "REL-2022-0187",
+  "contributors": [
+    "Hamza OUADIA @Cyb3rSn0rlax"
+  ],
+  "behavior": {
+    "source": "logon process",
+    "relationship": "trusted"
+  }
+}

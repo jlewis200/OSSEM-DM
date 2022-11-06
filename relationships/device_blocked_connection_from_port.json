@@ -1,0 +1,50 @@
+{
+  "references": [
+    "https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-5157"
+  ],
+  "security_events": [
+    {
+      "event_version": [
+        "1"
+      ],
+      "event_id": "5157",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "The Windows Filtering Platform has blocked a connection.",
+      "audit_sub_category": "Filtering Platform Connection",
+      "channel": "Security",
+      "platform": "windows",
+      "audit_category": "Object Access"
+    },
+    {
+      "event_version": [
+        "0",
+        "1"
+      ],
+      "event_id": "DeviceEvents",
+      "log_source": "Microsoft Defender for Endpoint",
+      "name": "DeviceEvents",
+      "filter_in": [
+        {
+          "ActionType": "FirewallInboundConnectionBlocked"
+        }
+      ],
+      "platform": "windows"
+    }
+  ],
+  "attack": {
+    "data_component": "network connection creation",
+    "data_source": "network traffic"
+  },
+  "name": "Device blocked connection from Port",
+  "relationship_id": "REL-2022-0028",
+  "contributors": [
+    "Jose Rodriguez @Cyb3rPandaH",
+    "Roberto Rodriguez @Cyb3rWard0g",
+    "Olaf Hartong @olafhartong"
+  ],
+  "behavior": {
+    "source": "device",
+    "relationship": "blocked connection from",
+    "target": "port"
+  }
+}

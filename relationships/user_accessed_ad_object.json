@@ -1,0 +1,50 @@
+{
+  "notes": [
+    "Events 4661 and 4662 require a SACL (https://docs.microsoft.com/en-us/windows/win32/secauthz/access-control-lists) to be for an object or they will not generate"
+  ],
+  "references": [
+    "https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4662",
+    "https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4932"
+  ],
+  "security_events": [
+    {
+      "event_version": [
+        "0"
+      ],
+      "event_id": "4662",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "An operation was performed on an object.",
+      "audit_sub_category": "Directory Service Access",
+      "channel": "Security",
+      "platform": "windows",
+      "audit_category": "DS Access"
+    },
+    {
+      "event_version": [
+        "1"
+      ],
+      "event_id": "4932",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "Synchronization of a replica of an Active Directory naming context has begun.",
+      "audit_sub_category": "Directory Service Replication",
+      "channel": "Security",
+      "platform": "windows",
+      "audit_category": "DS Access"
+    }
+  ],
+  "attack": {
+    "data_component": "active directory object access",
+    "data_source": "active directory"
+  },
+  "name": "User accessed AD Object",
+  "relationship_id": "REL-2022-0085",
+  "contributors": [
+    "Reid Gilman @reidgilman",
+    "Ruben Bouman @rubinatorz"
+  ],
+  "behavior": {
+    "source": "user",
+    "relationship": "accessed",
+    "target": "ad object"
+  }
+}

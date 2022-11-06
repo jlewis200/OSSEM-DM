@@ -1,0 +1,34 @@
+{
+  "references": [
+    "https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4718"
+  ],
+  "security_events": [
+    {
+      "event_version": [
+        "0"
+      ],
+      "event_id": "4718",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "System security access was removed from an account.",
+      "audit_sub_category": "Authentication Policy Change",
+      "channel": "Security",
+      "platform": "windows",
+      "audit_category": "Policy Change"
+    }
+  ],
+  "attack": {
+    "data_component": "user account modification",
+    "data_source": "user account"
+  },
+  "name": "User removed acess from User",
+  "relationship_id": "REL-2022-0083",
+  "contributors": [
+    "Jose Rodriguez @Cyb3rPandaH",
+    "Roberto Rodriguez @Cyb3rWard0g"
+  ],
+  "behavior": {
+    "source": "user",
+    "relationship": "removed access from",
+    "target": "user"
+  }
+}

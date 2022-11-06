@@ -1,0 +1,77 @@
+{
+  "references": [
+    "https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4624",
+    "https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4778",
+    "https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4964"
+  ],
+  "security_events": [
+    {
+      "event_version": [
+        "2"
+      ],
+      "event_id": "4624",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "An account was successfully logged on.",
+      "audit_sub_category": "Logon",
+      "channel": "Security",
+      "platform": "windows",
+      "audit_category": "Logon/Logoff"
+    },
+    {
+      "event_version": [
+        "0"
+      ],
+      "event_id": "4778",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "A session was reconnected to a Window Station.",
+      "audit_sub_category": "Other Logon/Logoff Events",
+      "channel": "Security",
+      "platform": "windows",
+      "audit_category": "Logon/Logoff"
+    },
+    {
+      "event_version": [
+        "0"
+      ],
+      "event_id": "4964",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "Special groups have been assigned to a new logon.",
+      "audit_sub_category": "Special Logon",
+      "channel": "Security",
+      "platform": "windows",
+      "audit_category": "Logon/Logoff"
+    },
+    {
+      "event_version": [
+        "0",
+        "1"
+      ],
+      "event_id": "DeviceLogonEvents",
+      "log_source": "Microsoft Defender for Endpoint",
+      "name": "DeviceLogonEvents",
+      "filter_in": [
+        {
+          "ActionType": "LogonSuccess"
+        }
+      ],
+      "platform": "windows"
+    }
+  ],
+  "attack": {
+    "data_component": "logon session creation",
+    "data_source": "logon session"
+  },
+  "name": "User created Logon",
+  "relationship_id": "REL-2022-0186",
+  "contributors": [
+    "Jose Rodriguez @Cyb3rPandaH",
+    "Roberto Rodriguez @Cyb3rWard0g",
+    "Olaf Hartong @olafhartong",
+    "Ruben Bouman @rubinatorz"
+  ],
+  "behavior": {
+    "source": "user",
+    "relationship": "created",
+    "target": "logon"
+  }
+}

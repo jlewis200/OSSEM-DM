@@ -1,0 +1,72 @@
+{
+  "references": [
+    "https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4688",
+    "https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#event-id-1-process-creation"
+  ],
+  "security_events": [
+    {
+      "event_version": [
+        "2"
+      ],
+      "event_id": "4688",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "A new process has been created.",
+      "audit_sub_category": "Process Creation",
+      "channel": "Security",
+      "platform": "windows",
+      "audit_category": "Detailed Tracking"
+    },
+    {
+      "event_version": [
+        "4.32"
+      ],
+      "event_id": "1",
+      "log_source": "Microsoft-Windows-Sysmon",
+      "name": "Process Creation.",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "platform": "windows",
+      "audit_category": "ProcessCreate"
+    },
+    {
+      "event_version": [
+        "4.81"
+      ],
+      "event_id": "1",
+      "log_source": "sysmon",
+      "name": "Process Creation.",
+      "platform": "linux",
+      "audit_category": "ProcessCreate"
+    },
+    {
+      "event_version": [
+        "0",
+        "1"
+      ],
+      "event_id": "DeviceProcessEvents",
+      "log_source": "Microsoft Defender for Endpoint",
+      "name": "DeviceProcessEvents",
+      "filter_in": [
+        {
+          "ActionType": "ProcessCreated"
+        }
+      ],
+      "platform": "windows"
+    }
+  ],
+  "attack": {
+    "data_component": "process creation",
+    "data_source": "process"
+  },
+  "name": "Process created Process",
+  "relationship_id": "REL-2022-0175",
+  "contributors": [
+    "Jose Rodriguez @Cyb3rPandaH",
+    "Roberto Rodriguez @Cyb3rWard0g",
+    "Olaf Hartong @olafhartong"
+  ],
+  "behavior": {
+    "source": "process",
+    "relationship": "created",
+    "target": "process"
+  }
+}

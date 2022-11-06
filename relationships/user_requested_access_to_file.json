@@ -1,0 +1,54 @@
+{
+  "notes": [
+    "Event 4656 generates only if object's SACL has required ACE to handle specific access right use."
+  ],
+  "references": [
+    "https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4656",
+    "https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4661"
+  ],
+  "security_events": [
+    {
+      "event_id": "4656",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "A handle to an object was requested.",
+      "audit_sub_category": "File System",
+      "channel": "Security",
+      "filter_in": [
+        {
+          "ObjectType": "File"
+        }
+      ],
+      "platform": "windows",
+      "audit_category": "Object Access"
+    },
+    {
+      "event_id": "4661",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "A handle to an object was requested.",
+      "audit_sub_category": "SAM",
+      "channel": "Security",
+      "filter_in": [
+        {
+          "ObjectType": "SAM"
+        }
+      ],
+      "platform": "windows",
+      "audit_category": "Object Access"
+    }
+  ],
+  "attack": {
+    "data_component": "file access",
+    "data_source": "file"
+  },
+  "name": "User requested access to File",
+  "relationship_id": "REL-2022-0092",
+  "contributors": [
+    "Jose Rodriguez @Cyb3rPandaH",
+    "Roberto Rodriguez @Cyb3rWard0g"
+  ],
+  "behavior": {
+    "source": "user",
+    "relationship": "requested access to",
+    "target": "file"
+  }
+}

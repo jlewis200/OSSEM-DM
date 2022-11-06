@@ -1,0 +1,27 @@
+{
+  "notes": [
+    "Potential contribution for ATT&CK - Command / command context"
+  ],
+  "security_events": [
+    {
+      "event_version": [
+        "0"
+      ],
+      "event_id": "400",
+      "log_source": "PowerShell",
+      "name": "Engine state is changed from None to Available.",
+      "channel": "Windows PowerShell",
+      "platform": "windows"
+    }
+  ],
+  "name": "Application host started",
+  "relationship_id": "REL-2022-0011",
+  "contributors": [
+    "Jose Rodriguez @Cyb3rPandaH",
+    "Roberto Rodriguez @Cyb3rWard0g"
+  ],
+  "behavior": {
+    "source": "application host",
+    "relationship": "started"
+  }
+}

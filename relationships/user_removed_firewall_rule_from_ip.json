@@ -1,0 +1,34 @@
+{
+  "notes": [
+    "Potential contribution for ATT&CK - Firewall / firewall rule modification"
+  ],
+  "security_events": [
+    {
+      "event_version": [
+        "1.05"
+      ],
+      "event_id": "cloudtrail",
+      "log_source": "cloudtrail",
+      "name": "cloudtrail",
+      "filter_in": [
+        {
+          "eventName": "DeleteRuleGroup"
+        },
+        {
+          "eventType": "AwsApiCall"
+        }
+      ],
+      "platform": "aws"
+    }
+  ],
+  "name": "User removed firewall rule from Ip",
+  "relationship_id": "REL-2022-0116",
+  "contributors": [
+    "Jose Rodriguez @Cyb3rPandaH"
+  ],
+  "behavior": {
+    "source": "user",
+    "relationship": "removed firewall rule from",
+    "target": "ip"
+  }
+}

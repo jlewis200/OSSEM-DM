@@ -1,0 +1,35 @@
+{
+  "security_events": [
+    {
+      "event_version": [
+        "1.05"
+      ],
+      "event_id": "cloudtrail",
+      "log_source": "cloudtrail",
+      "name": "cloudtrail",
+      "filter_in": [
+        {
+          "eventName": "ConsoleLogin"
+        },
+        {
+          "eventType": "AwsConsoleSignin"
+        }
+      ],
+      "platform": "aws"
+    }
+  ],
+  "attack": {
+    "data_component": "user account authentication",
+    "data_source": "user account"
+  },
+  "name": "User attempted to authenticate to Application",
+  "relationship_id": "REL-2022-0106",
+  "contributors": [
+    "Jose Rodriguez @Cyb3rPandaH"
+  ],
+  "behavior": {
+    "source": "user",
+    "relationship": "attempted to authenticate to",
+    "target": "application"
+  }
+}

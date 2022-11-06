@@ -1,0 +1,41 @@
+{
+  "notes": [
+    "Potential contribution for ATT&CK - User Account / user account authentication"
+  ],
+  "references": [
+    "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-event-reference-aws-console-sign-in-events.html"
+  ],
+  "security_events": [
+    {
+      "event_version": [
+        "1.05"
+      ],
+      "event_id": "cloudtrail",
+      "log_source": "cloudtrail",
+      "name": "cloudtrail",
+      "filter_in": [
+        {
+          "eventName": "ConsoleLogin"
+        },
+        {
+          "eventType": "AwsConsoleSignin"
+        }
+      ],
+      "platform": "aws"
+    }
+  ],
+  "attack": {
+    "data_component": "user account authentication",
+    "data_source": "user account"
+  },
+  "name": "Application attempted to authenticate User",
+  "relationship_id": "REL-2022-0086",
+  "contributors": [
+    "Jose Rodriguez @Cyb3rPandaH"
+  ],
+  "behavior": {
+    "source": "application",
+    "relationship": "attempted to authenticate",
+    "target": "user"
+  }
+}

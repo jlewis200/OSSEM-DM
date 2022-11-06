@@ -1,0 +1,60 @@
+{
+  "notes": [
+    "Potential contribution for ATT&CK - User Account / user account authentication"
+  ],
+  "references": [
+    "https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4624",
+    "https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4625",
+    "https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4648"
+  ],
+  "security_events": [
+    {
+      "event_version": [
+        "2"
+      ],
+      "event_id": "4624",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "An account was successfully logged on.",
+      "audit_sub_category": "Logon",
+      "channel": "Security",
+      "platform": "windows",
+      "audit_category": "Logon/Logoff"
+    },
+    {
+      "event_version": [
+        "0"
+      ],
+      "event_id": "4625",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "An account failed to log on.",
+      "audit_sub_category": "Account Lockout",
+      "channel": "Security",
+      "platform": "windows",
+      "audit_category": "Logon/Logoff"
+    },
+    {
+      "event_version": [
+        "0"
+      ],
+      "event_id": "4648",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "A logon was attempted using explicit credentials.",
+      "audit_sub_category": "Logon",
+      "channel": "Security",
+      "platform": "windows",
+      "audit_category": "Logon/Logoff"
+    }
+  ],
+  "name": "User attempted to authenticate to Device",
+  "relationship_id": "REL-2022-0052",
+  "contributors": [
+    "Jose Rodriguez @Cyb3rPandaH",
+    "Roberto Rodriguez @Cyb3rWard0g",
+    "Reid Gilman @reidgilman"
+  ],
+  "behavior": {
+    "source": "user",
+    "relationship": "attempted to authenticate to",
+    "target": "device"
+  }
+}

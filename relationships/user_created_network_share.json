@@ -1,0 +1,34 @@
+{
+  "references": [
+    "https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-5142"
+  ],
+  "security_events": [
+    {
+      "event_version": [
+        "0"
+      ],
+      "event_id": "5142",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "A network share object was added.",
+      "audit_sub_category": "File Share",
+      "channel": "Security",
+      "platform": "windows",
+      "audit_category": "Object Access"
+    }
+  ],
+  "attack": {
+    "data_component": "network share creation",
+    "data_source": "network share"
+  },
+  "name": "User created Network Share",
+  "relationship_id": "REL-2022-0169",
+  "contributors": [
+    "Jose Rodriguez @Cyb3rPandaH",
+    "Roberto Rodriguez @Cyb3rWard0g"
+  ],
+  "behavior": {
+    "source": "user",
+    "relationship": "created",
+    "target": "network share"
+  }
+}

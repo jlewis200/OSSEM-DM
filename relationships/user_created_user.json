@@ -1,0 +1,64 @@
+{
+  "references": [
+    "https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4720",
+    "https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4741"
+  ],
+  "security_events": [
+    {
+      "event_version": [
+        "0"
+      ],
+      "event_id": "4720",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "A user account was created.",
+      "audit_sub_category": "User Account Management",
+      "channel": "Security",
+      "platform": "windows",
+      "audit_category": "Account Management"
+    },
+    {
+      "event_version": [
+        "0"
+      ],
+      "event_id": "4741",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "A computer account was created.",
+      "audit_sub_category": "Computer Account Management",
+      "channel": "Security",
+      "platform": "windows",
+      "audit_category": "Account Management"
+    },
+    {
+      "event_version": [
+        "0",
+        "1"
+      ],
+      "event_id": "DeviceEvents",
+      "log_source": "Microsoft Defender for Endpoint",
+      "name": "DeviceEvents",
+      "filter_in": [
+        {
+          "ActionType": "UserAccountCreated"
+        }
+      ],
+      "platform": "windows"
+    }
+  ],
+  "attack": {
+    "data_component": "user account creation",
+    "data_source": "user account"
+  },
+  "name": "User created User",
+  "relationship_id": "REL-2022-0002",
+  "contributors": [
+    "Jose Rodriguez @Cyb3rPandaH",
+    "Roberto Rodriguez @Cyb3rWard0g",
+    "Olaf Hartong @olafhartong",
+    "Ruben Bouman @rubinatorz"
+  ],
+  "behavior": {
+    "source": "user",
+    "relationship": "created",
+    "target": "user"
+  }
+}

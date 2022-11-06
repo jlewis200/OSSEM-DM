@@ -1,0 +1,35 @@
+{
+  "security_events": [
+    {
+      "event_version": [
+        "1.05"
+      ],
+      "event_id": "cloudtrail",
+      "log_source": "cloudTrail",
+      "name": "cloudtrail",
+      "filter_in": [
+        {
+          "eventName": "RunInstances"
+        },
+        {
+          "eventType": "AwsApiCall"
+        }
+      ],
+      "platform": "aws"
+    }
+  ],
+  "attack": {
+    "data_component": "instance creation",
+    "data_source": "instance"
+  },
+  "name": "User created instance from Ip",
+  "relationship_id": "REL-2022-0158",
+  "contributors": [
+    "Jose Rodriguez @Cyb3rPandaH"
+  ],
+  "behavior": {
+    "source": "user",
+    "relationship": "created instance from",
+    "target": "ip"
+  }
+}

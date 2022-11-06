@@ -1,0 +1,101 @@
+{
+  "notes": [
+    "Event ID 4663 logs attempts of accesses to objects. Look for file creations by searching for \"Accesses=Delete\"."
+  ],
+  "references": [
+    "https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4660",
+    "https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4663",
+    "https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#event-id-23-filedelete-file-delete-archived",
+    "https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#event-id-26-filedeletedetected-file-delete-logged"
+  ],
+  "security_events": [
+    {
+      "event_version": [
+        "4.32"
+      ],
+      "event_id": "23",
+      "log_source": "Microsoft-Windows-Sysmon",
+      "name": "File Delete archived.",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "platform": "windows",
+      "audit_category": "FileDelete"
+    },
+    {
+      "event_version": [
+        "4.81"
+      ],
+      "event_id": "23",
+      "log_source": "sysmon",
+      "name": "File Delete archived.",
+      "platform": "linux",
+      "audit_category": "FileDelete"
+    },
+    {
+      "event_version": [
+        "4.32"
+      ],
+      "event_id": "26",
+      "log_source": "Microsoft-Windows-Sysmon",
+      "name": "File Delete logged.",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "platform": "windows",
+      "audit_category": "FileDeleteDetected"
+    },
+    {
+      "event_version": [
+        "0"
+      ],
+      "event_id": "4660",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "An object was deleted.",
+      "audit_sub_category": "File System",
+      "channel": "Security",
+      "platform": "windows",
+      "audit_category": "Object Access"
+    },
+    {
+      "event_version": [
+        "1"
+      ],
+      "event_id": "4663",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "An attempt was made to access an object.",
+      "audit_sub_category": "File System",
+      "channel": "Security",
+      "platform": "windows",
+      "audit_category": "Object Access"
+    },
+    {
+      "event_version": [
+        "0",
+        "1"
+      ],
+      "event_id": "DeviceFileEvents",
+      "log_source": "Microsoft Defender for Endpoint",
+      "name": "DeviceFileEvents",
+      "filter_in": [
+        {
+          "ActionType": "FileDeleted"
+        }
+      ],
+      "platform": "windows"
+    }
+  ],
+  "attack": {
+    "data_component": "file deletion",
+    "data_source": "file"
+  },
+  "name": "User deleted File",
+  "relationship_id": "REL-2022-0144",
+  "contributors": [
+    "Jose Rodriguez @Cyb3rPandaH",
+    "Roberto Rodriguez @Cyb3rWard0g",
+    "Olaf Hartong @olafhartong",
+    "Ruben Bouman @rubinatorz"
+  ],
+  "behavior": {
+    "source": "user",
+    "relationship": "deleted",
+    "target": "file"
+  }
+}

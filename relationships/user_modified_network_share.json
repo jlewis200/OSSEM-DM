@@ -1,0 +1,34 @@
+{
+  "references": [
+    "https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-5143"
+  ],
+  "security_events": [
+    {
+      "event_version": [
+        "0"
+      ],
+      "event_id": "5143",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "A network share object was modified.",
+      "audit_sub_category": "File Share",
+      "channel": "Security",
+      "platform": "windows",
+      "audit_category": "Object Access"
+    }
+  ],
+  "attack": {
+    "data_component": "network share modification",
+    "data_source": "network share"
+  },
+  "name": "User modified Network share",
+  "relationship_id": "REL-2022-0076",
+  "contributors": [
+    "Jose Rodriguez @Cyb3rPandaH",
+    "Roberto Rodriguez @Cyb3rWard0g"
+  ],
+  "behavior": {
+    "source": "user",
+    "relationship": "modified",
+    "target": "network share"
+  }
+}

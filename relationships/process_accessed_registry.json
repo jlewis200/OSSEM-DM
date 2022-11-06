@@ -1,0 +1,42 @@
+{
+  "notes": [
+    "Event 4663 includes the following caveat \\\"This event generates only if object\\u2019\\s SACL has required ACE to handle specific access right use.\\\""
+  ],
+  "references": [
+    "https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4663"
+  ],
+  "security_events": [
+    {
+      "event_version": [
+        "1"
+      ],
+      "event_id": "4663",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "An attempt was made to access an object.",
+      "audit_sub_category": "Registry",
+      "channel": "Security",
+      "filter_in": [
+        {
+          "ObjectType": "Key"
+        }
+      ],
+      "platform": "windows",
+      "audit_category": "Object Access"
+    }
+  ],
+  "attack": {
+    "data_component": "windows registry key access",
+    "data_source": "windows registry"
+  },
+  "name": "Process accessed Registry",
+  "relationship_id": "REL-2022-0048",
+  "contributors": [
+    "Reid Gilman @reidgilman",
+    "Jose Rodriguez @Cyb3rPandaH"
+  ],
+  "behavior": {
+    "source": "process",
+    "relationship": "accessed",
+    "target": "registry"
+  }
+}

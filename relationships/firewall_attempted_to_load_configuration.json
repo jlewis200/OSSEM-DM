@@ -1,0 +1,26 @@
+{
+  "security_events": [
+    {
+      "event_version": [],
+      "event_id": "2009",
+      "log_source": "Microsoft-Windows-Windows Firewall With Advanced Security",
+      "name": "The Windows Firewall service failed to load Group Policy.",
+      "channel": "Microsoft-Windows-Windows Firewall With Advanced Security/Firewall",
+      "platform": "windows"
+    }
+  ],
+  "attack": {
+    "data_component": "firewall metadata",
+    "data_source": "firewall"
+  },
+  "name": "Firewall attempted to load Configuration",
+  "relationship_id": "REL-2022-0127",
+  "contributors": [
+    "Ruben Bouman @rubinatorz"
+  ],
+  "behavior": {
+    "source": "firewall",
+    "relationship": "attempted to load",
+    "target": "configuration"
+  }
+}

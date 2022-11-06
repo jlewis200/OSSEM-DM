@@ -1,0 +1,63 @@
+{
+  "references": [
+    "https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-5157",
+    "https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-5031"
+  ],
+  "security_events": [
+    {
+      "event_version": [
+        "1"
+      ],
+      "event_id": "5157",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "The Windows Filtering Platform has blocked a connection.",
+      "audit_sub_category": "Filtering Platform Connection",
+      "channel": "Security",
+      "platform": "windows",
+      "audit_category": "Object Access"
+    },
+    {
+      "event_version": [
+        "0"
+      ],
+      "event_id": "5031",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "The Windows Firewall Service blocked an application from accepting incoming connections on the network.",
+      "audit_sub_category": "Filtering Platform Connection",
+      "channel": "Security",
+      "platform": "windows",
+      "audit_category": "Object Access"
+    },
+    {
+      "event_version": [
+        "0",
+        "1"
+      ],
+      "event_id": "DeviceEvents",
+      "log_source": "Microsoft Defender for Endpoint",
+      "name": "DeviceEvents",
+      "filter_in": [
+        {
+          "ActionType": "FirewallInboundConnectionToAppBlocked"
+        }
+      ],
+      "platform": "windows"
+    }
+  ],
+  "attack": {
+    "data_component": "network connection creation",
+    "data_source": "network traffic"
+  },
+  "name": "Device blocked connection to Process",
+  "relationship_id": "REL-2022-0033",
+  "contributors": [
+    "Jose Rodriguez @Cyb3rPandaH",
+    "Roberto Rodriguez @Cyb3rWard0g",
+    "Olaf Hartong @olafhartong"
+  ],
+  "behavior": {
+    "source": "Device",
+    "relationship": "blocked connection to",
+    "target": "process"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "references": [
+    "https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4722"
+  ],
+  "security_events": [
+    {
+      "event_version": [
+        "0"
+      ],
+      "event_id": "4722",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "A user account was enabled.",
+      "audit_sub_category": "User Account Management",
+      "channel": "Security",
+      "platform": "windows",
+      "audit_category": "Account Management"
+    },
+    {
+      "event_version": [
+        "0",
+        "1"
+      ],
+      "event_id": "DeviceEvents",
+      "log_source": "Microsoft Defender for Endpoint",
+      "name": "DeviceEvents",
+      "filter_in": [
+        {
+          "ActionType": "UserAccountModified"
+        }
+      ],
+      "platform": "windows"
+    }
+  ],
+  "attack": {
+    "data_component": "user account modification",
+    "data_source": "user account"
+  },
+  "name": "User enabled User",
+  "relationship_id": "REL-2022-0024",
+  "contributors": [
+    "Jose Rodriguez @Cyb3rPandaH",
+    "Roberto Rodriguez @Cyb3rWard0g",
+    "Olaf Hartong @olafhartong"
+  ],
+  "behavior": {
+    "source": "user",
+    "relationship": "enabled",
+    "target": "user"
+  }
+}

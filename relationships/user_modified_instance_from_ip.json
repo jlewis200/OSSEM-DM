@@ -1,0 +1,34 @@
+{
+  "notes": [
+    "Potential contribution for ATT&CK - Instance / instance modification"
+  ],
+  "security_events": [
+    {
+      "event_version": [
+        "1.05"
+      ],
+      "event_id": "cloudtrail",
+      "log_source": "cloudtrail",
+      "name": "cloudtrail",
+      "filter_in": [
+        {
+          "eventName": "ModifyInstanceAttribute"
+        },
+        {
+          "eventType": "AwsApiCall"
+        }
+      ],
+      "platform": "aws"
+    }
+  ],
+  "name": "User modified instance from Ip",
+  "relationship_id": "REL-2022-0171",
+  "contributors": [
+    "Jose Rodriguez @Cyb3rPandaH"
+  ],
+  "behavior": {
+    "source": "user",
+    "relationship": "modified instance from",
+    "target": "ip"
+  }
+}

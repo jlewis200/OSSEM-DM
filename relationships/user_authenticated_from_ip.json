@@ -1,0 +1,37 @@
+{
+  "notes": [
+    "Potential contribution for ATT&CK - User Account / user account authentication"
+  ],
+  "references": [
+    "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-non-api-events.html"
+  ],
+  "security_events": [
+    {
+      "event_version": [
+        "1.05"
+      ],
+      "event_id": "cloudtrail",
+      "log_source": "cloudtrail",
+      "name": "cloudtrail",
+      "filter_in": [
+        {
+          "eventName": "ConsoleLogin"
+        },
+        {
+          "eventType": "AwsConsoleSignin"
+        }
+      ],
+      "platform": "aws"
+    }
+  ],
+  "name": "User authenticated from Ip",
+  "relationship_id": "REL-2022-0065",
+  "contributors": [
+    "Jose Rodriguez @Cyb3rPandaH"
+  ],
+  "behavior": {
+    "source": "user",
+    "relationship": "authenticated from",
+    "target": "ip"
+  }
+}

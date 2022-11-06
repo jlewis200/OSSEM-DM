@@ -1,0 +1,111 @@
+{
+  "notes": [
+    "Event ID 4657 is logged for Creation, Modification and Deletion of registry key values. Use \"Operation Type=Existing registry value modified\" to look for modifications."
+  ],
+  "references": [
+    "https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4657",
+    "https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4670",
+    "https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#event-id-13-registryevent-value-set",
+    "https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#event-id-14-registryevent-key-and-value-rename"
+  ],
+  "security_events": [
+    {
+      "event_version": [
+        "4.32"
+      ],
+      "event_id": "13",
+      "log_source": "Microsoft-Windows-Sysmon",
+      "name": "RegistryEvent (Value Set).",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "platform": "windows",
+      "audit_category": "RegistryEvent"
+    },
+    {
+      "event_version": [
+        "4.32"
+      ],
+      "event_id": "14",
+      "log_source": "Microsoft-Windows-Sysmon",
+      "name": "RegistryEvent (Key and Value Rename).",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "platform": "windows",
+      "audit_category": "RegistryEvent"
+    },
+    {
+      "event_version": [
+        "0"
+      ],
+      "event_id": "4657",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "A registry value was modified.",
+      "audit_sub_category": "Registry",
+      "channel": "Security",
+      "filter_in": [
+        {
+          "OperationType": "Existing registry value modified"
+        }
+      ],
+      "platform": "windows",
+      "audit_category": "Object Access"
+    },
+    {
+      "event_version": [
+        "0"
+      ],
+      "event_id": "4670",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "Permissions on an object were changed.",
+      "audit_sub_category": "Registry",
+      "channel": "Security",
+      "platform": "windows",
+      "audit_category": "Object Access"
+    },
+    {
+      "event_version": [
+        "0",
+        "1"
+      ],
+      "event_id": "DeviceRegistryEvents",
+      "log_source": "Microsoft Defender for Endpoint",
+      "name": "DeviceRegistryEvents",
+      "filter_in": [
+        {
+          "ActionType": "RegistryValueSet"
+        }
+      ],
+      "platform": "windows"
+    },
+    {
+      "event_version": [
+        "0",
+        "1"
+      ],
+      "event_id": "DeviceRegistryEvents",
+      "log_source": "Microsoft Defender for Endpoint",
+      "name": "DeviceRegistryEvents",
+      "filter_in": [
+        {
+          "ActionType": "RegistryKeySet"
+        }
+      ],
+      "platform": "windows"
+    }
+  ],
+  "attack": {
+    "data_component": "windows registry key modification",
+    "data_source": "windows registry"
+  },
+  "name": "User modified Registry",
+  "relationship_id": "REL-2022-0145",
+  "contributors": [
+    "Jose Rodriguez @Cyb3rPandaH",
+    "Roberto Rodriguez @Cyb3rWard0g",
+    "Olaf Hartong @olafhartong",
+    "Ruben Bouman @rubinatorz"
+  ],
+  "behavior": {
+    "source": "user",
+    "relationship": "modified",
+    "target": "registry"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "references": [
+    "https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4656"
+  ],
+  "security_events": [
+    {
+      "event_id": "4656",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "A handle to an object was requested.",
+      "audit_sub_category": "Registry",
+      "channel": "Security",
+      "filter_in": [
+        {
+          "ObjectType": "Key"
+        }
+      ],
+      "platform": "windows",
+      "audit_category": "Object Access"
+    }
+  ],
+  "attack": {
+    "data_component": "windows registry key access",
+    "data_source": "windows registry"
+  },
+  "name": "User requested access to Registry",
+  "relationship_id": "REL-2022-0013",
+  "contributors": [
+    "Jose Rodriguez @Cyb3rPandaH",
+    "Roberto Rodriguez @Cyb3rWard0g"
+  ],
+  "behavior": {
+    "source": "user",
+    "relationship": "requested access to",
+    "target": "registry"
+  }
+}

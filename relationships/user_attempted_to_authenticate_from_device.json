@@ -1,0 +1,33 @@
+{
+  "references": [
+    "https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4776"
+  ],
+  "security_events": [
+    {
+      "event_version": [
+        "0"
+      ],
+      "event_id": "4776",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "The domain controller or local computer attempted to validate the credentials for an account.",
+      "audit_sub_category": "Credential Validation",
+      "channel": "Security",
+      "platform": "windows",
+      "audit_category": "Account Logon"
+    }
+  ],
+  "attack": {
+    "data_component": "user account authentication",
+    "data_source": "user account"
+  },
+  "name": "User attempted to authenticate from Device",
+  "relationship_id": "REL-2022-0122",
+  "contributors": [
+    "Ruben Bouman @rubinatorz"
+  ],
+  "behavior": {
+    "source": "user",
+    "relationship": "attempted to authenticate from",
+    "target": "device"
+  }
+}

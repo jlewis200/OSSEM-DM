@@ -1,0 +1,33 @@
+{
+  "references": [
+    "https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-6423"
+  ],
+  "security_events": [
+    {
+      "event_version": [
+        "0"
+      ],
+      "event_id": "6423",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "The installation of this device is forbidden by system policy.",
+      "audit_sub_category": "PNP Activity",
+      "channel": "Security",
+      "platform": "windows",
+      "audit_category": "Detailed Tracking"
+    }
+  ],
+  "attack": {
+    "data_component": "drive creation",
+    "data_source": "drive"
+  },
+  "name": "User attempted to install Drive",
+  "relationship_id": "REL-2022-0069",
+  "contributors": [
+    "Ruben Bouman @rubinatorz"
+  ],
+  "behavior": {
+    "source": "user",
+    "relationship": "attempted to install",
+    "target": "drive"
+  }
+}

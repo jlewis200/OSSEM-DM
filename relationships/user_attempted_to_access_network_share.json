@@ -1,0 +1,66 @@
+{
+  "notes": [
+    "Potential contribution for ATT&CK - Network Share / network share access"
+  ],
+  "references": [
+    "https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-5140",
+    "https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-5145"
+  ],
+  "security_events": [
+    {
+      "event_version": [
+        "1"
+      ],
+      "event_id": "5140",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "A network share object was accessed.",
+      "audit_sub_category": "File Share",
+      "channel": "Security",
+      "platform": "windows",
+      "audit_category": "Object Access"
+    },
+    {
+      "event_version": [
+        "0"
+      ],
+      "event_id": "5145",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "A network share object was checked to see whether client can be granted desired access.",
+      "audit_sub_category": "Detailed File Share",
+      "channel": "Security",
+      "platform": "windows",
+      "audit_category": "Object Access"
+    },
+    {
+      "event_version": [
+        "0",
+        "1"
+      ],
+      "event_id": "DeviceLogonEvents",
+      "log_source": "Microsoft Defender for Endpoint",
+      "name": "DeviceLogonEvents",
+      "filter_in": [
+        {
+          "ActionType": "LogonSuccess"
+        }
+      ],
+      "platform": "windows"
+    }
+  ],
+  "attack": {
+    "data_component": "network share access",
+    "data_source": "network share"
+  },
+  "name": "User attempted to access Network Share",
+  "relationship_id": "REL-2022-0078",
+  "contributors": [
+    "Jose Rodriguez @Cyb3rPandaH",
+    "Roberto Rodriguez @Cyb3rWard0g",
+    "Olaf Hartong @olafhartong"
+  ],
+  "behavior": {
+    "source": "user",
+    "relationship": "attempted to access",
+    "target": "network share"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "references": [
+    "https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4634",
+    "https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4647"
+  ],
+  "security_events": [
+    {
+      "event_version": [
+        "0"
+      ],
+      "event_id": "4634",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "An account was logged off.",
+      "audit_sub_category": "Logoff",
+      "channel": "Security",
+      "platform": "windows",
+      "audit_category": "Logon/Logoff"
+    },
+    {
+      "event_version": [
+        "0"
+      ],
+      "event_id": "4647",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "User initiated logoff.",
+      "audit_sub_category": "Logoff",
+      "channel": "Security",
+      "platform": "windows",
+      "audit_category": "Logon/Logoff"
+    }
+  ],
+  "attack": {
+    "data_component": "logon session termination",
+    "data_source": "logon session"
+  },
+  "name": "User terminated Logon",
+  "relationship_id": "REL-2022-0172",
+  "contributors": [
+    "Jose Rodriguez @Cyb3rPandaH",
+    "Roberto Rodriguez @Cyb3rWard0g",
+    "Ruben Bouman @rubinatorz"
+  ],
+  "behavior": {
+    "source": "user",
+    "relationship": "terminated",
+    "target": "logon"
+  }
+}

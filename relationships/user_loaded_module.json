@@ -1,0 +1,51 @@
+{
+  "notes": [
+    "Potential contribution for ATT&CK - Module / module load"
+  ],
+  "references": [
+    "https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#event-id-7-image-loaded"
+  ],
+  "security_events": [
+    {
+      "event_version": [
+        "4.32"
+      ],
+      "event_id": "7",
+      "log_source": "Microsoft-Windows-Sysmon",
+      "name": "Image loaded.",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "platform": "windows",
+      "audit_category": "ImageLoad"
+    },
+    {
+      "event_version": [
+        "0",
+        "1"
+      ],
+      "event_id": "DeviceImageLoadEvents",
+      "log_source": "Microsoft Defender for Endpoint",
+      "name": "DeviceImageLoadEvents",
+      "filter_in": [
+        {
+          "ActionType": "ImageLoaded"
+        }
+      ],
+      "platform": "windows"
+    }
+  ],
+  "attack": {
+    "data_component": "module load",
+    "data_source": "module"
+  },
+  "name": "User loaded Module",
+  "relationship_id": "REL-2022-0014",
+  "contributors": [
+    "Jose Rodriguez @Cyb3rPandaH",
+    "Olaf Hartong @olafhartong"
+  ],
+  "behavior": {
+    "source": "user",
+    "relationship": "loaded",
+    "target": "module"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "security_events": [
+    {
+      "event_version": [
+        "1.05"
+      ],
+      "event_id": "cloudtrail",
+      "log_source": "cloudtrail",
+      "name": "cloudtrail",
+      "filter_in": [
+        {
+          "eventName": "ModifyInstanceAttribute"
+        },
+        {
+          "eventType": "AwsApiCall"
+        }
+      ],
+      "platform": "aws"
+    }
+  ],
+  "attack": {
+    "data_component": "instance modification",
+    "data_source": "instance"
+  },
+  "name": "User modified Instance",
+  "relationship_id": "REL-2022-0117",
+  "contributors": [
+    "Jose Rodriguez @Cyb3rPandaH"
+  ],
+  "behavior": {
+    "source": "user",
+    "relationship": "modified",
+    "target": "instance"
+  }
+}

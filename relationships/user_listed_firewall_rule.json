@@ -1,0 +1,35 @@
+{
+  "security_events": [
+    {
+      "event_version": [
+        "1.05"
+      ],
+      "event_id": "cloudtrail",
+      "log_source": "cloudtrail",
+      "name": "cloudtrail",
+      "filter_in": [
+        {
+          "eventName": "ListRuleGroups"
+        },
+        {
+          "eventType": "AwsApiCall"
+        }
+      ],
+      "platform": "aws"
+    }
+  ],
+  "attack": {
+    "data_component": "firewall enumeration",
+    "data_source": "firewall"
+  },
+  "name": "User listed Firewall rule",
+  "relationship_id": "REL-2022-0032",
+  "contributors": [
+    "Jose Rodriguez @Cyb3rPandaH"
+  ],
+  "behavior": {
+    "source": "user",
+    "relationship": "listed",
+    "target": "firewall rule"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "notes": [
+    "Potential contribution for ATT&CK - Command / command context"
+  ],
+  "security_events": [
+    {
+      "event_version": [
+        "1"
+      ],
+      "event_id": "53504",
+      "log_source": "Microsoft-Windows-PowerShell",
+      "name": "Windows PowerShell has started an IPC listening thread on a process in AppDomain.",
+      "channel": "Microsoft-Windows-PowerShell/Operational",
+      "platform": "windows"
+    }
+  ],
+  "name": "Application domain started",
+  "relationship_id": "REL-2022-0055",
+  "contributors": [
+    "Jose Rodriguez @Cyb3rPandaH",
+    "Roberto Rodriguez @Cyb3rWard0g"
+  ],
+  "behavior": {
+    "source": "application domain",
+    "relationship": "started"
+  }
+}

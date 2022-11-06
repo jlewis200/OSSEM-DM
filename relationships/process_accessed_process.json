@@ -1,0 +1,69 @@
+{
+  "notes": [
+    "Event 4663, this event generates only if object SACL has required ACE to handle specific access right use."
+  ],
+  "references": [
+    "https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4663"
+  ],
+  "security_events": [
+    {
+      "event_version": [
+        "4.32"
+      ],
+      "event_id": "10",
+      "log_source": "Microsoft-Windows-Sysmon",
+      "name": "ProcessAccess",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "platform": "windows",
+      "audit_category": "ProcessAccess"
+    },
+    {
+      "event_version": [
+        "1"
+      ],
+      "event_id": "4663",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "An attempt was made to access an object.",
+      "audit_sub_category": "Kernel Object",
+      "channel": "Security",
+      "filter_in": [
+        {
+          "ObjectType": "Process"
+        }
+      ],
+      "platform": "windows",
+      "audit_category": "Object Access"
+    },
+    {
+      "event_version": [
+        "0",
+        "1"
+      ],
+      "event_id": "DeviceEvents",
+      "log_source": "Microsoft Defender for Endpoint",
+      "name": "DeviceEvents",
+      "filter_in": [
+        {
+          "ActionType": "OpenProcessApiCall"
+        }
+      ],
+      "platform": "windows"
+    }
+  ],
+  "attack": {
+    "data_component": "process access",
+    "data_source": "process"
+  },
+  "name": "Process accessed Process",
+  "relationship_id": "REL-2022-0121",
+  "contributors": [
+    "Jose Rodriguez @Cyb3rPandaH",
+    "Roberto Rodriguez @Cyb3rWard0g",
+    "Olaf Hartong @olafhartong"
+  ],
+  "behavior": {
+    "source": "process",
+    "relationship": "accessed",
+    "target": "process"
+  }
+}

@@ -1,0 +1,145 @@
+{
+  "references": [
+    "https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/audit-security-group-management",
+    "https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4732",
+    "https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4733",
+    "https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4735",
+    "https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4764"
+  ],
+  "security_events": [
+    {
+      "event_version": [
+        "0"
+      ],
+      "event_id": "4728",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "A member was added to a security-enabled global group.",
+      "audit_sub_category": "Security Group Management",
+      "channel": "Security",
+      "platform": "windows",
+      "audit_category": "Account Management"
+    },
+    {
+      "event_version": [
+        "0"
+      ],
+      "event_id": "4729",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "A member was removed from a security-enabled global group.",
+      "audit_sub_category": "Security Group Management",
+      "channel": "Security",
+      "platform": "windows",
+      "audit_category": "Account Management"
+    },
+    {
+      "event_version": [
+        "0"
+      ],
+      "event_id": "4732",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "A member was added to a security-enabled local group.",
+      "audit_sub_category": "Security Group Management",
+      "channel": "Security",
+      "platform": "windows",
+      "audit_category": "Account Management"
+    },
+    {
+      "event_version": [
+        "0"
+      ],
+      "event_id": "4733",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "A member was removed from a security-enabled local group.",
+      "audit_sub_category": "Security Group Management",
+      "channel": "Security",
+      "platform": "windows",
+      "audit_category": "Account Management"
+    },
+    {
+      "event_version": [
+        "0"
+      ],
+      "event_id": "4735",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "A security-enabled local group was changed.",
+      "audit_sub_category": "Security Group Management",
+      "channel": "Security",
+      "platform": "windows",
+      "audit_category": "Account Management"
+    },
+    {
+      "event_version": [
+        "0"
+      ],
+      "event_id": "4737",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "A security-enabled global group was changed.",
+      "audit_sub_category": "Security Group Management",
+      "channel": "Security",
+      "platform": "windows",
+      "audit_category": "Account Management"
+    },
+    {
+      "event_version": [
+        "0"
+      ],
+      "event_id": "4755",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "A security-enabled universal group was changed.",
+      "audit_sub_category": "Security Group Management",
+      "channel": "Security",
+      "platform": "windows",
+      "audit_category": "Account Management"
+    },
+    {
+      "event_version": [
+        "0"
+      ],
+      "event_id": "4756",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "A member was added to a security-enabled universal group.",
+      "audit_sub_category": "Security Group Management",
+      "channel": "Security",
+      "platform": "windows",
+      "audit_category": "Account Management"
+    },
+    {
+      "event_version": [
+        "0"
+      ],
+      "event_id": "4757",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "A member was removed from a security-enabled universal group.",
+      "audit_sub_category": "Security Group Management",
+      "channel": "Security",
+      "platform": "windows",
+      "audit_category": "Account Management"
+    },
+    {
+      "event_version": [
+        "0"
+      ],
+      "event_id": "4764",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "A groups type was changed.",
+      "audit_sub_category": "Security Group Management",
+      "channel": "Security",
+      "platform": "windows",
+      "audit_category": "Account Management"
+    }
+  ],
+  "attack": {
+    "data_component": "group modification",
+    "data_source": "group"
+  },
+  "name": "User modified Group",
+  "relationship_id": "REL-2022-0185",
+  "contributors": [
+    "Ruben Bouman @rubinatorz"
+  ],
+  "behavior": {
+    "source": "user",
+    "relationship": "modified",
+    "target": "group"
+  }
+}

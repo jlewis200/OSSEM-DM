@@ -1,0 +1,41 @@
+{
+  "notes": [
+    "Potential contribution for ATT&CK - Firewall / firewall modification (New data component and relationship)"
+  ],
+  "security_events": [
+    {
+      "event_version": [
+        "0"
+      ],
+      "event_id": "2002",
+      "log_source": "Microsoft-Windows-Windows Firewall With Advanced Security",
+      "name": "A Windows Defender Firewall setting has changed.",
+      "channel": "Microsoft-Windows-Windows Firewall With Advanced Security/Firewall",
+      "platform": "windows"
+    },
+    {
+      "event_version": [
+        "0"
+      ],
+      "event_id": "2003",
+      "log_source": "Microsoft-Windows-Windows Firewall With Advanced Security",
+      "name": "A Windows Defender Firewall setting in the Private profile has changed.",
+      "channel": "Microsoft-Windows-Windows Firewall With Advanced Security/Firewall",
+      "platform": "windows"
+    }
+  ],
+  "attack": {
+    "data_component": "firewall metadata",
+    "data_source": "firewall"
+  },
+  "name": "User modified Firewall",
+  "relationship_id": "REL-2022-0152",
+  "contributors": [
+    "Jose Rodriguez @Cyb3rPandaH"
+  ],
+  "behavior": {
+    "source": "user",
+    "relationship": "modified",
+    "target": "firewall"
+  }
+}

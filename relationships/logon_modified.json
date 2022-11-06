@@ -1,0 +1,33 @@
+{
+  "references": [
+    "https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4672"
+  ],
+  "security_events": [
+    {
+      "event_version": [
+        "0"
+      ],
+      "event_id": "4672",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "Special privileges assigned to new logon.",
+      "audit_sub_category": "Special Logon",
+      "channel": "Security",
+      "platform": "windows",
+      "audit_category": "Logon/Logoff"
+    }
+  ],
+  "attack": {
+    "data_component": "logon session modification",
+    "data_source": "logon session"
+  },
+  "name": "Logon modified",
+  "relationship_id": "REL-2022-0149",
+  "contributors": [
+    "Jose Rodriguez @Cyb3rPandaH",
+    "Roberto Rodriguez @Cyb3rWard0g"
+  ],
+  "behavior": {
+    "source": "logon",
+    "relationship": "modified"
+  }
+}

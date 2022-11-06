@@ -1,0 +1,64 @@
+{
+  "notes": [
+    "Event 4663 includes the following caveat \"This event generates only if object's SACL has required ACE to handle specific access right use\".",
+    "Event ID 4663 logs attempts of accesses to objects. Look for file creations by searching for \"Accesses=WriteData\"."
+  ],
+  "references": [
+    "https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4663"
+  ],
+  "security_events": [
+    {
+      "event_version": [
+        "4.81"
+      ],
+      "event_id": "11",
+      "log_source": "sysmon",
+      "name": "FileCreate.",
+      "platform": "linux",
+      "audit_category": "FileCreate"
+    },
+    {
+      "event_version": [
+        "0",
+        "1"
+      ],
+      "event_id": "DeviceFileEvents",
+      "log_source": "Microsoft Defender for Endpoint",
+      "name": "DeviceFileEvents",
+      "filter_in": [
+        {
+          "ActionType": "FileCreated"
+        }
+      ],
+      "platform": "windows"
+    },
+    {
+      "event_version": [
+        "1"
+      ],
+      "event_id": "4663",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "An attempt was made to access an object.",
+      "audit_sub_category": "File System",
+      "channel": "Security",
+      "platform": "windows",
+      "audit_category": "Object Access"
+    }
+  ],
+  "attack": {
+    "data_component": "file creation",
+    "data_source": "file"
+  },
+  "name": "User created File",
+  "relationship_id": "REL-2022-0043",
+  "contributors": [
+    "Jose Rodriguez @Cyb3rPandaH",
+    "Ruben Bouman @rubinatorz",
+    "Olaf Hartong @olafhartong"
+  ],
+  "behavior": {
+    "source": "user",
+    "relationship": "created",
+    "target": "file"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "references": [
+    "https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-6416",
+    "https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-6424"
+  ],
+  "security_events": [
+    {
+      "event_version": [
+        "1"
+      ],
+      "event_id": "6416",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "A new external device was recognized by the system.",
+      "audit_sub_category": "PNP Activity",
+      "channel": "Security",
+      "platform": "windows",
+      "audit_category": "Detailed Tracking"
+    },
+    {
+      "event_version": [
+        "0"
+      ],
+      "event_id": "6424",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "The installation of this device was allowed, after having previously been forbidden by policy.",
+      "audit_sub_category": "PNP Activity",
+      "channel": "Security",
+      "platform": "windows",
+      "audit_category": "Detailed Tracking"
+    }
+  ],
+  "attack": {
+    "data_component": "drive creation",
+    "data_source": "drive"
+  },
+  "name": "User installed Drive",
+  "relationship_id": "REL-2022-0114",
+  "contributors": [
+    "Ruben Bouman @rubinatorz"
+  ],
+  "behavior": {
+    "source": "user",
+    "relationship": "installed",
+    "target": "drive"
+  }
+}

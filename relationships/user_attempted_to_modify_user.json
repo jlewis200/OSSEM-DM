@@ -1,0 +1,48 @@
+{
+  "references": [
+    "https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4723",
+    "https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4724"
+  ],
+  "security_events": [
+    {
+      "event_version": [
+        "0"
+      ],
+      "event_id": "4723",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "An attempt was made to change an account's password.",
+      "audit_sub_category": "User Account Management",
+      "channel": "Security",
+      "platform": "windows",
+      "audit_category": "Account Management"
+    },
+    {
+      "event_version": [
+        "0"
+      ],
+      "event_id": "4724",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "An attempt was made to reset an account's password.",
+      "audit_sub_category": "User Account Management",
+      "channel": "Security",
+      "platform": "windows",
+      "audit_category": "Account Management"
+    }
+  ],
+  "attack": {
+    "data_component": "user account modification",
+    "data_source": "user account"
+  },
+  "name": "User attempted to modify User",
+  "relationship_id": "REL-2022-0133",
+  "contributors": [
+    "Jose Rodriguez @Cyb3rPandaH",
+    "Roberto Rodriguez @Cyb3rWard0g",
+    "Ruben Bouman @rubinatorz"
+  ],
+  "behavior": {
+    "source": "user",
+    "relationship": "attempted to modify",
+    "target": "user"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "notes": [
+    "Potential contribution for ATT&CK - Cloud Service / cloud service modification"
+  ],
+  "security_events": [
+    {
+      "event_version": [
+        "1.05"
+      ],
+      "event_id": "cloudtrail",
+      "log_source": "cloudtrail",
+      "name": "cloudtrail",
+      "filter_in": [
+        {
+          "eventName": "UpdateTrail"
+        },
+        {
+          "eventType": "AwsApiCall"
+        }
+      ],
+      "platform": "aws"
+    }
+  ],
+  "name": "User modified cloud service from Ip",
+  "relationship_id": "REL-2022-0031",
+  "contributors": [
+    "Jose Rodriguez @Cyb3rPandaH"
+  ],
+  "behavior": {
+    "source": "user",
+    "relationship": "modified cloud service from",
+    "target": "ip"
+  }
+}

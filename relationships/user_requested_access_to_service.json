@@ -1,0 +1,34 @@
+{
+  "references": [
+    "https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4656"
+  ],
+  "security_events": [
+    {
+      "event_version": [
+        "1"
+      ],
+      "event_id": "4656",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "A handle to an object was requested.",
+      "audit_sub_category": "Other Object Access Events",
+      "channel": "Security",
+      "platform": "windows",
+      "audit_category": "Object Access"
+    }
+  ],
+  "attack": {
+    "data_component": "service access",
+    "data_source": "service"
+  },
+  "name": "User requested access to Service",
+  "relationship_id": "REL-2022-0110",
+  "contributors": [
+    "Jose Rodriguez @Cyb3rPandaH",
+    "Roberto Rodriguez @Cyb3rWard0g"
+  ],
+  "behavior": {
+    "source": "user",
+    "relationship": "requested access to",
+    "target": "service"
+  }
+}

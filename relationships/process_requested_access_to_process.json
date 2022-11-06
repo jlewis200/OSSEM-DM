@@ -1,0 +1,67 @@
+{
+  "references": [
+    "https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4656",
+    "https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#event-id-10-processaccess"
+  ],
+  "security_events": [
+    {
+      "event_version": [
+        "1"
+      ],
+      "event_id": "4656",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "A handle to an object was requested.",
+      "audit_sub_category": "Kernel Object",
+      "channel": "Security",
+      "filter_in": [
+        {
+          "ObjectType": "Process"
+        }
+      ],
+      "platform": "windows",
+      "audit_category": "Object Access"
+    },
+    {
+      "event_version": [
+        "4.32"
+      ],
+      "event_id": "10",
+      "log_source": "Microsoft-Windows-Sysmon",
+      "name": "Process Access.",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "platform": "windows",
+      "audit_category": "ProcessAccess"
+    },
+    {
+      "event_version": [
+        "0",
+        "1"
+      ],
+      "event_id": "DeviceEvents",
+      "log_source": "Microsoft Defender for Endpoint",
+      "name": "DeviceEvents",
+      "filter_in": [
+        {
+          "ActionType": "OpenProcessApiCall"
+        }
+      ],
+      "platform": "windows"
+    }
+  ],
+  "attack": {
+    "data_component": "process access",
+    "data_source": "process"
+  },
+  "name": "Process requested access to Process",
+  "relationship_id": "REL-2022-0111",
+  "contributors": [
+    "Jose Rodriguez @Cyb3rPandaH",
+    "Roberto Rodriguez @Cyb3rWard0g",
+    "Olaf Hartong @olafhartong"
+  ],
+  "behavior": {
+    "source": "process",
+    "relationship": "requested access to",
+    "target": "process"
+  }
+}

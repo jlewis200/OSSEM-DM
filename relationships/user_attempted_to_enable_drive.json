@@ -1,0 +1,33 @@
+{
+  "references": [
+    "https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-6421"
+  ],
+  "security_events": [
+    {
+      "event_version": [
+        "0"
+      ],
+      "event_id": "6421",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "A request was made to enable a device.",
+      "audit_sub_category": "PNP Activity",
+      "channel": "Security",
+      "platform": "windows",
+      "audit_category": "Detailed Tracking"
+    }
+  ],
+  "attack": {
+    "data_component": "drive modification",
+    "data_source": "drive"
+  },
+  "name": "User attempted to enable Drive",
+  "relationship_id": "REL-2022-0067",
+  "contributors": [
+    "Ruben Bouman @rubinatorz"
+  ],
+  "behavior": {
+    "source": "user",
+    "relationship": "attempted to enable",
+    "target": "drive"
+  }
+}

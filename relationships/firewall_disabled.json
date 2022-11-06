@@ -1,0 +1,46 @@
+{
+  "references": [
+    "https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-5025",
+    "https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-5034"
+  ],
+  "security_events": [
+    {
+      "event_version": [
+        "0"
+      ],
+      "event_id": "5025",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "The Windows Firewall Service has been stopped.",
+      "audit_sub_category": "Other System Events",
+      "channel": "Security",
+      "platform": "windows",
+      "audit_category": "System"
+    },
+    {
+      "event_version": [
+        "0"
+      ],
+      "event_id": "5034",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "The Windows Firewall Driver was stopped.",
+      "audit_sub_category": "Other System Events",
+      "channel": "Security",
+      "platform": "windows",
+      "audit_category": "System"
+    }
+  ],
+  "attack": {
+    "data_component": "firewall disable",
+    "data_source": "firewall"
+  },
+  "name": "Firewall disabled",
+  "relationship_id": "REL-2022-0035",
+  "contributors": [
+    "Jose Rodriguez @Cyb3rPandaH",
+    "Ruben Bouman @rubinatorz"
+  ],
+  "behavior": {
+    "source": "firewall",
+    "relationship": "disabled"
+  }
+}

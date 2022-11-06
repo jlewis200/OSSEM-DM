@@ -1,0 +1,34 @@
+{
+  "references": [
+    "https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-5137"
+  ],
+  "security_events": [
+    {
+      "event_version": [
+        "0"
+      ],
+      "event_id": "5137",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "A directory service object was created.",
+      "audit_sub_category": "Directory Service Changes",
+      "channel": "Security",
+      "platform": "windows",
+      "audit_category": "DS Access"
+    }
+  ],
+  "attack": {
+    "data_component": "active directory object creation",
+    "data_source": "active directory"
+  },
+  "name": "User created AD Object",
+  "relationship_id": "REL-2022-0136",
+  "contributors": [
+    "Jose Rodriguez @Cyb3rPandaH",
+    "Roberto Rodriguez @Cyb3rWard0g"
+  ],
+  "behavior": {
+    "source": "user",
+    "relationship": "created",
+    "target": "ad object"
+  }
+}

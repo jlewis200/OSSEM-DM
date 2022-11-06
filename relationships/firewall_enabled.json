@@ -1,0 +1,35 @@
+{
+  "notes": [
+    "Potential contribution for ATT&CK - Firewall / firewall enable"
+  ],
+  "references": [
+    "https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-5024"
+  ],
+  "security_events": [
+    {
+      "event_version": [
+        "0"
+      ],
+      "event_id": "5024",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "The Windows Firewall Service has started successfully.",
+      "audit_sub_category": "Other System Events",
+      "channel": "Security",
+      "platform": "windows",
+      "audit_category": "System"
+    }
+  ],
+  "attack": {
+    "data_component": "firewall metadata",
+    "data_source": "firewall"
+  },
+  "name": "Firewall enabled",
+  "relationship_id": "REL-2022-0049",
+  "contributors": [
+    "Jose Rodriguez @Cyb3rPandaH"
+  ],
+  "behavior": {
+    "source": "firewall",
+    "relationship": "enabled"
+  }
+}

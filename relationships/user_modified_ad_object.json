@@ -1,0 +1,61 @@
+{
+  "references": [
+    "https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-5136",
+    "https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-5139",
+    "https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4719"
+  ],
+  "security_events": [
+    {
+      "event_version": [
+        "0"
+      ],
+      "event_id": "5136",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "A directory service object was modified.",
+      "audit_sub_category": "Directory Service Changes",
+      "channel": "Security",
+      "platform": "windows",
+      "audit_category": "DS Access"
+    },
+    {
+      "event_version": [
+        "0"
+      ],
+      "event_id": "5139",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "A directory service object was moved.",
+      "audit_sub_category": "Directory Service Changes",
+      "channel": "Security",
+      "platform": "windows",
+      "audit_category": "DS Access"
+    },
+    {
+      "event_version": [
+        "0"
+      ],
+      "event_id": "4719",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "System audit policy was changed.",
+      "audit_sub_category": "Policy Change",
+      "channel": "Security",
+      "platform": "windows",
+      "audit_category": "Policy Change"
+    }
+  ],
+  "attack": {
+    "data_component": "active directory object modification",
+    "data_source": "active directory"
+  },
+  "name": "User modified AD Object",
+  "relationship_id": "REL-2022-0162",
+  "contributors": [
+    "Jose Rodriguez @Cyb3rPandaH",
+    "Roberto Rodriguez @Cyb3rWard0g",
+    "Ruben Bouman @rubinatorz"
+  ],
+  "behavior": {
+    "source": "user",
+    "relationship": "modified",
+    "target": "ad object"
+  }
+}

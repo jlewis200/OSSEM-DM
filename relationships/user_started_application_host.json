@@ -1,0 +1,28 @@
+{
+  "notes": [
+    "Potential contribution for ATT&CK - Command / command execution"
+  ],
+  "security_events": [
+    {
+      "event_version": [
+        "1"
+      ],
+      "event_id": "4103",
+      "log_source": "Microsoft-Windows-PowerShell",
+      "name": "Module logging.",
+      "channel": "Microsoft-Windows-PowerShell/Operational",
+      "platform": "windows"
+    }
+  ],
+  "name": "User started Application host",
+  "relationship_id": "REL-2022-0016",
+  "contributors": [
+    "Jose Rodriguez @Cyb3rPandaH",
+    "Roberto Rodriguez @Cyb3rWard0g"
+  ],
+  "behavior": {
+    "source": "user",
+    "relationship": "started",
+    "target": "application host"
+  }
+}

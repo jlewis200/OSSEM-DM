@@ -1,0 +1,48 @@
+{
+  "references": [
+    "https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#event-id-6-driver-loaded"
+  ],
+  "security_events": [
+    {
+      "event_version": [
+        "4.32"
+      ],
+      "event_id": "6",
+      "log_source": "Microsoft-Windows-Sysmon",
+      "name": "Driver loaded.",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "platform": "windows",
+      "audit_category": "DriverLoad"
+    },
+    {
+      "event_version": [
+        "0",
+        "1"
+      ],
+      "event_id": "DeviceEvents",
+      "log_source": "Microsoft Defender for Endpoint",
+      "name": "DeviceEvents",
+      "filter_in": [
+        {
+          "ActionType": "DriverLoaded"
+        }
+      ],
+      "platform": "windows"
+    }
+  ],
+  "attack": {
+    "data_component": "driver load",
+    "data_source": "driver"
+  },
+  "name": "Driver loaded",
+  "relationship_id": "REL-2022-0126",
+  "contributors": [
+    "Jose Rodriguez @Cyb3rPandaH",
+    "Roberto Rodriguez @Cyb3rWard0g",
+    "Olaf Hartong @olafhartong"
+  ],
+  "behavior": {
+    "source": "driver",
+    "relationship": "loaded"
+  }
+}

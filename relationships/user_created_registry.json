@@ -1,0 +1,90 @@
+{
+  "notes": [
+    "Event ID 4657 is logged for Creation, Modification and Deletion of registry key values. Use \"Operation Type=New registry value created\" to look for creations."
+  ],
+  "references": [
+    "https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4657",
+    "https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#event-id-12-registryevent-object-create-and-delete"
+  ],
+  "security_events": [
+    {
+      "event_version": [
+        "4.32"
+      ],
+      "event_id": "12",
+      "log_source": "Microsoft-Windows-Sysmon",
+      "name": "RegistryEvent (Object create and delete).",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "filter_in": [
+        {
+          "EventType": "CreateKey"
+        }
+      ],
+      "platform": "windows",
+      "audit_category": "RegistryEvent"
+    },
+    {
+      "event_version": [
+        "0",
+        "1"
+      ],
+      "event_id": "DeviceRegistryEvents",
+      "log_source": "Microsoft Defender for Endpoint",
+      "name": "DeviceRegistryEvents",
+      "filter_in": [
+        {
+          "ActionType": "RegistryValueSet"
+        }
+      ],
+      "platform": "windows"
+    },
+    {
+      "event_version": [
+        "0",
+        "1"
+      ],
+      "event_id": "DeviceRegistryEvents",
+      "log_source": "Microsoft Defender for Endpoint",
+      "name": "DeviceRegistryEvents",
+      "filter_in": [
+        {
+          "ActionType": "RegistryKeyCreated"
+        }
+      ],
+      "platform": "windows"
+    },
+    {
+      "event_version": [
+        "0"
+      ],
+      "event_id": "4657",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "A registry value was modified.",
+      "audit_sub_category": "Registry",
+      "channel": "Security",
+      "filter_in": [
+        {
+          "OperationType": "New registry value created"
+        }
+      ],
+      "platform": "windows",
+      "audit_category": "Object Access"
+    }
+  ],
+  "attack": {
+    "data_component": "windows registry key creation",
+    "data_source": "windows registry"
+  },
+  "name": "User created Registry",
+  "relationship_id": "REL-2022-0105",
+  "contributors": [
+    "Jose Rodriguez @Cyb3rPandaH",
+    "Olaf Hartong @olafhartong",
+    "Ruben Bouman @rubinatorz"
+  ],
+  "behavior": {
+    "source": "user",
+    "relationship": "created",
+    "target": "registry"
+  }
+}

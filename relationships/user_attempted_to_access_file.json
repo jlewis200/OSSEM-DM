@@ -1,0 +1,33 @@
+{
+  "notes": [
+    "Potential contribution for ATT&CK - File / file access"
+  ],
+  "references": [
+    "https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4692"
+  ],
+  "security_events": [
+    {
+      "event_version": [
+        "0"
+      ],
+      "event_id": "4692",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "Backup of data protection master key was attempted.",
+      "audit_sub_category": "DPAPI Activity",
+      "channel": "Security",
+      "platform": "windows",
+      "audit_category": "Detailed Tracking"
+    }
+  ],
+  "name": "User attempted to access File",
+  "relationship_id": "REL-2022-0054",
+  "contributors": [
+    "Jose Rodriguez @Cyb3rPandaH",
+    "Roberto Rodriguez @Cyb3rWard0g"
+  ],
+  "behavior": {
+    "source": "user",
+    "relationship": "attempted to access",
+    "target": "file"
+  }
+}

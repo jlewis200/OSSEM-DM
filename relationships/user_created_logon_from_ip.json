@@ -1,0 +1,63 @@
+{
+  "references": [
+    "https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4624",
+    "https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4778"
+  ],
+  "security_events": [
+    {
+      "event_version": [
+        "2"
+      ],
+      "event_id": "4624",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "An account was successfully logged on.",
+      "audit_sub_category": "Logon",
+      "channel": "Security",
+      "platform": "windows",
+      "audit_category": "Logon/Logoff"
+    },
+    {
+      "event_version": [
+        "0"
+      ],
+      "event_id": "4778",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "A session was reconnected to a Window Station.",
+      "audit_sub_category": "Other Logon/Logoff Events",
+      "channel": "Security",
+      "platform": "windows",
+      "audit_category": "Logon/Logoff"
+    },
+    {
+      "event_version": [
+        "0",
+        "1"
+      ],
+      "event_id": "DeviceLogonEvents",
+      "log_source": "Microsoft Defender for Endpoint",
+      "name": "DeviceLogonEvents",
+      "filter_in": [
+        {
+          "ActionType": "LogonSuccess"
+        }
+      ],
+      "platform": "windows"
+    }
+  ],
+  "attack": {
+    "data_component": "logon session creation",
+    "data_source": "logon session"
+  },
+  "name": "User created logon from Ip",
+  "relationship_id": "REL-2022-0046",
+  "contributors": [
+    "Jose Rodriguez @Cyb3rPandaH",
+    "Roberto Rodriguez @Cyb3rWard0g",
+    "Olaf Hartong @olafhartong"
+  ],
+  "behavior": {
+    "source": "user",
+    "relationship": "created logon from",
+    "target": "ip"
+  }
+}

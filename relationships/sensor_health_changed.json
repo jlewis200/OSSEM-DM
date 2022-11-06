@@ -1,0 +1,85 @@
+{
+  "references": [
+    "https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-1100",
+    "https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-1102",
+    "https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-1104",
+    "https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-1105",
+    "https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4616"
+  ],
+  "security_events": [
+    {
+      "event_version": [
+        "4.32"
+      ],
+      "event_id": "4",
+      "log_source": "Microsoft-Windows-Sysmon",
+      "name": "Sysmon service state changed.",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "platform": "windows",
+      "audit_category": "ServiceStateChange"
+    },
+    {
+      "event_id": "1100",
+      "log_source": "Microsoft-Windows-Eventlog",
+      "name": "The event logging service has shut down.",
+      "platform": "windows"
+    },
+    {
+      "event_id": "1101",
+      "log_source": "Microsoft-Windows-Eventlog",
+      "name": "Audit events have been dropped by the transport.",
+      "platform": "windows"
+    },
+    {
+      "event_id": "1102",
+      "log_source": "Microsoft-Windows-Eventlog",
+      "name": "The audit log was cleared.",
+      "platform": "windows"
+    },
+    {
+      "event_id": "1104",
+      "log_source": "Microsoft-Windows-Eventlog",
+      "name": "The security Log is now full.",
+      "platform": "windows"
+    },
+    {
+      "event_id": "6005",
+      "log_source": "EventLog",
+      "name": "The Event log service was started.",
+      "channel": "System",
+      "platform": "windows"
+    },
+    {
+      "event_id": "6006",
+      "log_source": "EventLog",
+      "name": "The Event log service was stopped.",
+      "channel": "System",
+      "platform": "windows"
+    },
+    {
+      "event_version": [
+        "1"
+      ],
+      "event_id": "4616",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "The system time was changed.",
+      "audit_sub_category": "Security State Change",
+      "channel": "Security",
+      "platform": "windows",
+      "audit_category": "System"
+    }
+  ],
+  "attack": {
+    "data_component": "host status",
+    "data_source": "sensor health"
+  },
+  "name": "Sensor Health changed",
+  "relationship_id": "REL-2022-0061",
+  "contributors": [
+    "Ruben Bouman @rubinatorz"
+  ],
+  "behavior": {
+    "source": "sensor health",
+    "relationship": "changed"
+  }
+}

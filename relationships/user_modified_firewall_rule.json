@@ -1,0 +1,45 @@
+{
+  "security_events": [
+    {
+      "event_version": [
+        "0"
+      ],
+      "event_id": "2005",
+      "log_source": "Microsoft-Windows-Windows Firewall With Advanced Security",
+      "name": "A rule has been modified in the Windows Defender Firewall exception list.",
+      "channel": "Microsoft-Windows-Windows Firewall With Advanced Security/Firewall",
+      "platform": "windows"
+    },
+    {
+      "event_version": [
+        "1.05"
+      ],
+      "event_id": "cloudtrail",
+      "log_source": "cloudtrail",
+      "name": "cloudtrail",
+      "filter_in": [
+        {
+          "eventName": "UpdateRuleGroup"
+        },
+        {
+          "eventType": "AwsApiCall"
+        }
+      ],
+      "platform": "aws"
+    }
+  ],
+  "attack": {
+    "data_component": "firewall rule modification",
+    "data_source": "firewall"
+  },
+  "name": "User modified Firewall rule",
+  "relationship_id": "REL-2022-0179",
+  "contributors": [
+    "Jose Rodriguez @Cyb3rPandaH"
+  ],
+  "behavior": {
+    "source": "user",
+    "relationship": "modified",
+    "target": "firewall rule"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "references": [
+    "https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4948"
+  ],
+  "security_events": [
+    {
+      "event_version": [
+        "0"
+      ],
+      "event_id": "4948",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "A change has been made to Windows Firewall exception list. A rule was deleted.",
+      "audit_sub_category": "MPSSVC Rule-Level Policy Change",
+      "channel": "Security",
+      "platform": "windows",
+      "audit_category": "Policy Change"
+    }
+  ],
+  "attack": {
+    "data_component": "firewall rule modification",
+    "data_source": "firewall"
+  },
+  "name": "Firewall Rule added",
+  "relationship_id": "REL-2022-0072",
+  "contributors": [
+    "Jose Rodriguez @Cyb3rPandaH"
+  ],
+  "behavior": {
+    "source": "firewall rule",
+    "relationship": "removed"
+  }
+}

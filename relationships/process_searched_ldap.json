@@ -1,0 +1,43 @@
+{
+  "notes": [
+    "Host-based ETW provieder for LDAP search filter performed by a process. This event provides valuable data like PID, search filter and attributes."
+  ],
+  "references": [],
+  "security_events": [
+    {
+      "event_id": "30",
+      "log_source": "Microsoft-Windows-LDAP-Client/Debug",
+      "name": "EventID(30)",
+      "platform": "windows"
+    },
+    {
+      "event_version": [
+        "0",
+        "1"
+      ],
+      "event_id": "DeviceEvents",
+      "log_source": "Microsoft Defender for Endpoint",
+      "name": "DeviceEvents",
+      "filter_in": [
+        {
+          "ActionType": "LdapSearch"
+        }
+      ],
+      "platform": "windows"
+    }
+  ],
+  "attack": {
+    "data_component": "process metadata",
+    "data_source": "process"
+  },
+  "name": "Process searched LDAP",
+  "relationship_id": "REL-2022-0073",
+  "contributors": [
+    "Hamza OUADI @Cyb3rSn0rlax"
+  ],
+  "behavior": {
+    "source": "process",
+    "relationship": "searched",
+    "target": "ldap"
+  }
+}

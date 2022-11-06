@@ -1,0 +1,46 @@
+{
+  "references": [
+    "https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4798",
+    "https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4799"
+  ],
+  "security_events": [
+    {
+      "event_version": [
+        "0"
+      ],
+      "event_id": "4798",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "A user's local group membership was enumerated.",
+      "audit_sub_category": "User Account Management",
+      "channel": "Security",
+      "platform": "windows",
+      "audit_category": "Account Management"
+    },
+    {
+      "event_version": [
+        "0"
+      ],
+      "event_id": "4799",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "A security-enabled local group membership was enumerated.",
+      "audit_sub_category": "Security Group Management",
+      "channel": "Security",
+      "platform": "windows",
+      "audit_category": "Account Management"
+    }
+  ],
+  "attack": {
+    "data_component": "group enumeration",
+    "data_source": "group"
+  },
+  "name": "User enumerated Group",
+  "relationship_id": "REL-2022-0165",
+  "contributors": [
+    "Ruben Bouman @rubinatorz"
+  ],
+  "behavior": {
+    "source": "user",
+    "relationship": "enumerated",
+    "target": "group"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "references": [
+    "https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4701"
+  ],
+  "security_events": [
+    {
+      "event_version": [
+        "0"
+      ],
+      "event_id": "4701",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "A scheduled task was disabled.",
+      "audit_sub_category": "Other Object Access Events",
+      "channel": "Security",
+      "platform": "windows",
+      "audit_category": "Object Access"
+    },
+    {
+      "event_version": [
+        "0",
+        "1"
+      ],
+      "event_id": "DeviceEvents",
+      "log_source": "Microsoft Defender for Endpoint",
+      "name": "DeviceEvents",
+      "filter_in": [
+        {
+          "ActionType": "ScheduledTaskModified"
+        }
+      ],
+      "platform": "windows"
+    }
+  ],
+  "attack": {
+    "data_component": "scheduled job modification",
+    "data_source": "scheduled job"
+  },
+  "name": "User disabled Scheduled job",
+  "relationship_id": "REL-2022-0167",
+  "contributors": [
+    "Jose Rodriguez @Cyb3rPandaH",
+    "Roberto Rodriguez @Cyb3rWard0g",
+    "Olaf Hartong @olafhartong"
+  ],
+  "behavior": {
+    "source": "user",
+    "relationship": "disabled",
+    "target": "scheduled job"
+  }
+}

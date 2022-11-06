@@ -1,0 +1,34 @@
+{
+  "references": [
+    "https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-5159"
+  ],
+  "security_events": [
+    {
+      "event_version": [
+        "0"
+      ],
+      "event_id": "5159",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "The Windows Filtering Platform has blocked a bind to a local port.",
+      "audit_sub_category": "Filtering Platform Connection",
+      "channel": "Security",
+      "platform": "windows",
+      "audit_category": "Object Access"
+    }
+  ],
+  "attack": {
+    "data_component": "network connection creation",
+    "data_source": "network traffic"
+  },
+  "name": "Process attempted to bind on Port",
+  "relationship_id": "REL-2022-0183",
+  "contributors": [
+    "Jose Rodriguez @Cyb3rPandaH",
+    "Roberto Rodriguez @Cyb3rWard0g"
+  ],
+  "behavior": {
+    "source": "process",
+    "relationship": "attempted to bind on",
+    "target": "port"
+  }
+}

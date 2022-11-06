@@ -1,0 +1,58 @@
+{
+  "references": [
+    "https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/audit-security-group-management",
+    "https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4734"
+  ],
+  "security_events": [
+    {
+      "event_version": [
+        "0"
+      ],
+      "event_id": "4730",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "A security-enabled global group was deleted.",
+      "audit_sub_category": "Security Group Management",
+      "channel": "Security",
+      "platform": "windows",
+      "audit_category": "Account Management"
+    },
+    {
+      "event_version": [
+        "0"
+      ],
+      "event_id": "4734",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "A security-enabled local group was deleted.",
+      "audit_sub_category": "Security Group Management",
+      "channel": "Security",
+      "platform": "windows",
+      "audit_category": "Account Management"
+    },
+    {
+      "event_version": [
+        "0"
+      ],
+      "event_id": "4758",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "A security-enabled universal group was deleted.",
+      "audit_sub_category": "Security Group Management",
+      "channel": "Security",
+      "platform": "windows",
+      "audit_category": "Account Management"
+    }
+  ],
+  "attack": {
+    "data_component": "group deletion",
+    "data_source": "group"
+  },
+  "name": "User deleted Group",
+  "relationship_id": "REL-2022-0045",
+  "contributors": [
+    "Ruben Bouman @rubinatorz"
+  ],
+  "behavior": {
+    "source": "user",
+    "relationship": "deleted",
+    "target": "group"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "references": [
+    "https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#event-id-5-process-terminated"
+  ],
+  "security_events": [
+    {
+      "event_version": [
+        "4.32"
+      ],
+      "event_id": "5",
+      "log_source": "Microsoft-Windows-Sysmon",
+      "name": "Process terminated.",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "platform": "windows",
+      "audit_category": "ProcessTerminate"
+    },
+    {
+      "event_version": [
+        "4.81"
+      ],
+      "event_id": "5",
+      "log_source": "sysmon",
+      "name": "Process terminated.",
+      "platform": "linux",
+      "audit_category": "ProcessTerminate"
+    }
+  ],
+  "attack": {
+    "data_component": "process metadata",
+    "data_source": "process"
+  },
+  "name": "Process terminated",
+  "relationship_id": "REL-2022-0029",
+  "contributors": [
+    "Jose Rodriguez @Cyb3rPandaH",
+    "Roberto Rodriguez @Cyb3rWard0g"
+  ],
+  "behavior": {
+    "source": "process",
+    "relationship": "terminated"
+  }
+}

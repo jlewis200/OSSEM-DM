@@ -1,0 +1,48 @@
+{
+  "notes": [
+    "Potential contribution for ATT&CK - Network Traffic / network traffic content"
+  ],
+  "references": [
+    "https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#event-id-22-dnsevent-dns-query"
+  ],
+  "security_events": [
+    {
+      "event_version": [
+        "4.32"
+      ],
+      "event_id": "22",
+      "log_source": "Microsoft-Windows-Sysmon",
+      "name": "DNSEvent (DNS query).",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "platform": "windows",
+      "audit_category": "DNSQuery"
+    },
+    {
+      "event_version": [
+        "0",
+        "1"
+      ],
+      "event_id": "DeviceEvents",
+      "log_source": "Microsoft Defender for Endpoint",
+      "name": "DeviceEvents",
+      "filter_in": [
+        {
+          "ActionType": "DnsQueryResponse"
+        }
+      ],
+      "platform": "windows"
+    }
+  ],
+  "name": "Process executed Dns query",
+  "relationship_id": "REL-2022-0151",
+  "contributors": [
+    "Jose Rodriguez @Cyb3rPandaH",
+    "Roberto Rodriguez @Cyb3rWard0g",
+    "Olaf Hartong @olafhartong"
+  ],
+  "behavior": {
+    "source": "process",
+    "relationship": "executed",
+    "target": "dns query"
+  }
+}

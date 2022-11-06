@@ -1,0 +1,34 @@
+{
+  "notes": [
+    "Potential contribution for ATT&CK - Cloud Service / cloud service start - new component"
+  ],
+  "security_events": [
+    {
+      "event_version": [
+        "1.05"
+      ],
+      "event_id": "cloudtrail",
+      "log_source": "cloudtrail",
+      "name": "cloudtrail",
+      "filter_in": [
+        {
+          "eventName": "StartLogging"
+        },
+        {
+          "eventType": "AwsApiCall"
+        }
+      ],
+      "platform": "aws"
+    }
+  ],
+  "name": "User started Cloud service",
+  "relationship_id": "REL-2022-0101",
+  "contributors": [
+    "Jose Rodriguez @Cyb3rPandaH"
+  ],
+  "behavior": {
+    "source": "user",
+    "relationship": "started",
+    "target": "cloud service"
+  }
+}

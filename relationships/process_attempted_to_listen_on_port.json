@@ -1,0 +1,34 @@
+{
+  "references": [
+    "https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-5155"
+  ],
+  "security_events": [
+    {
+      "event_version": [
+        "0"
+      ],
+      "event_id": "5155",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "The Windows Filtering Platform has blocked an application or service from listening on a port for incoming connections.",
+      "audit_sub_category": "Filtering Platform Connection",
+      "channel": "Security",
+      "platform": "windows",
+      "audit_category": "Object Access"
+    }
+  ],
+  "attack": {
+    "data_component": "network connection creation",
+    "data_source": "network traffic"
+  },
+  "name": "Process attempted to listen on Port",
+  "relationship_id": "REL-2022-0091",
+  "contributors": [
+    "Jose Rodriguez @Cyb3rPandaH",
+    "Roberto Rodriguez @Cyb3rWard0g"
+  ],
+  "behavior": {
+    "source": "process",
+    "relationship": "attempted to listen on",
+    "target": "port"
+  }
+}

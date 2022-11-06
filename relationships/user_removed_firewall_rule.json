@@ -1,0 +1,56 @@
+{
+  "security_events": [
+    {
+      "event_version": [
+        "1.05"
+      ],
+      "event_id": "cloudtrail",
+      "log_source": "cloudtrail",
+      "name": "cloudtrail",
+      "filter_in": [
+        {
+          "eventName": "DeleteRuleGroup"
+        },
+        {
+          "eventType": "AwsApiCall"
+        }
+      ],
+      "platform": "aws"
+    },
+    {
+      "event_version": [
+        "0"
+      ],
+      "event_id": "2006",
+      "log_source": "Microsoft-Windows-Windows Firewall With Advanced Security",
+      "name": "A rule has been deleted in the Windows Defender Firewall exception list",
+      "channel": "Microsoft-Windows-Windows Firewall With Advanced Security/Firewall",
+      "platform": "windows"
+    },
+    {
+      "event_version": [
+        "0"
+      ],
+      "event_id": "2033",
+      "log_source": "Microsoft-Windows-Windows Firewall With Advanced Security",
+      "name": "All rules have been deleted from the Windows Firewall configuration on this computer.",
+      "channel": "Microsoft-Windows-Windows Firewall With Advanced Security/Firewall",
+      "platform": "windows"
+    }
+  ],
+  "attack": {
+    "data_component": "firewall rule modification",
+    "data_source": "firewall"
+  },
+  "name": "User removed Firewall rule",
+  "relationship_id": "REL-2022-0118",
+  "contributors": [
+    "Jose Rodriguez @Cyb3rPandaH",
+    "Ruben Bouman @rubinatorz"
+  ],
+  "behavior": {
+    "source": "user",
+    "relationship": "removed",
+    "target": "firewall rule"
+  }
+}

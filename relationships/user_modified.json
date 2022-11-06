@@ -1,0 +1,36 @@
+{
+  "notes": [
+    "Potential contribution for ATT&CK - User Account / user account metadata"
+  ],
+  "references": [
+    "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-non-api-events.html"
+  ],
+  "security_events": [
+    {
+      "event_version": [
+        "1.05"
+      ],
+      "event_id": "cloudtrail",
+      "log_source": "cloudtrail",
+      "name": "cloudtrail",
+      "filter_in": [
+        {
+          "eventName": "PasswordUpdated"
+        },
+        {
+          "eventType": "AwsConsoleSignin"
+        }
+      ],
+      "platform": "aws"
+    }
+  ],
+  "name": "User modified",
+  "relationship_id": "REL-2022-0005",
+  "contributors": [
+    "Jose Rodriguez @Cyb3rPandaH"
+  ],
+  "behavior": {
+    "source": "user",
+    "relationship": "modified"
+  }
+}

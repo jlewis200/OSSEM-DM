@@ -1,0 +1,60 @@
+{
+  "references": [
+    "https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4697"
+  ],
+  "security_events": [
+    {
+      "event_version": [
+        "0"
+      ],
+      "event_id": "4697",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "A service was installed in the system.",
+      "audit_sub_category": "Security System Extension",
+      "channel": "Security",
+      "platform": "windows",
+      "audit_category": "System"
+    },
+    {
+      "event_version": [
+        "0"
+      ],
+      "event_id": "7045",
+      "log_source": "Service Control Manager",
+      "name": "A new service was installed in the system.",
+      "channel": "System",
+      "platform": "windows"
+    },
+    {
+      "event_version": [
+        "0",
+        "1"
+      ],
+      "event_id": "DeviceEvents",
+      "log_source": "Microsoft Defender for Endpoint",
+      "name": "DeviceEvents",
+      "filter_in": [
+        {
+          "ActionType": "ServiceInstalled"
+        }
+      ],
+      "platform": "windows"
+    }
+  ],
+  "attack": {
+    "data_component": "service creation",
+    "data_source": "service"
+  },
+  "name": "User created Service",
+  "relationship_id": "REL-2022-0097",
+  "contributors": [
+    "Jose Rodriguez @Cyb3rPandaH",
+    "Roberto Rodriguez @Cyb3rWard0g",
+    "Olaf Hartong @olafhartong"
+  ],
+  "behavior": {
+    "source": "user",
+    "relationship": "created",
+    "target": "service"
+  }
+}

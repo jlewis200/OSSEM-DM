@@ -1,0 +1,34 @@
+{
+  "references": [
+    "https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4740"
+  ],
+  "security_events": [
+    {
+      "event_version": [
+        "0"
+      ],
+      "event_id": "4740",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "A user account was locked out.",
+      "audit_sub_category": "User Account Management",
+      "channel": "Security",
+      "platform": "windows",
+      "audit_category": "Account Management"
+    }
+  ],
+  "attack": {
+    "data_component": "user account modification",
+    "data_source": "user account"
+  },
+  "name": "User locked User",
+  "relationship_id": "REL-2022-0009",
+  "contributors": [
+    "Jose Rodriguez @Cyb3rPandaH",
+    "Roberto Rodriguez @Cyb3rWard0g"
+  ],
+  "behavior": {
+    "source": "user",
+    "relationship": "locked",
+    "target": "user"
+  }
+}

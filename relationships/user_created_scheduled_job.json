@@ -1,0 +1,50 @@
+{
+  "references": [
+    "https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4698"
+  ],
+  "security_events": [
+    {
+      "event_version": [
+        "0"
+      ],
+      "event_id": "4698",
+      "log_source": "Microsoft-Windows-Security-Auditing",
+      "name": "A scheduled task was created.",
+      "audit_sub_category": "Other Object Access Events",
+      "channel": "Security",
+      "platform": "windows",
+      "audit_category": "Object Access"
+    },
+    {
+      "event_version": [
+        "0",
+        "1"
+      ],
+      "event_id": "DeviceEvents",
+      "log_source": "Microsoft Defender for Endpoint",
+      "name": "DeviceEvents",
+      "filter_in": [
+        {
+          "ActionType": "ScheduledTaskCreated"
+        }
+      ],
+      "platform": "windows"
+    }
+  ],
+  "attack": {
+    "data_component": "scheduled job creation",
+    "data_source": "scheduled job"
+  },
+  "name": "User created Scheduled job",
+  "relationship_id": "REL-2022-0030",
+  "contributors": [
+    "Jose Rodriguez @Cyb3rPandaH",
+    "Roberto Rodriguez @Cyb3rWard0g",
+    "Olaf Hartong @olafhartong"
+  ],
+  "behavior": {
+    "source": "user",
+    "relationship": "created",
+    "target": "scheduled job"
+  }
+}
